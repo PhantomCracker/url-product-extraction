@@ -9,6 +9,6 @@
   "author": "fs0ciety team",
   "license": "ISC",
   "dependencies": {
-    "csv-parse": "^5.5.5"
+    "papaparse": "^5.4.1"
   }
 }
