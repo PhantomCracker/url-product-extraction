@@ -18,9 +18,8 @@ for (let i = 0; i < parsedData.data.length; i++) {
 
 groupByDomain(urls)
   .then(groupedDomains => {
-    // console.log("Domains grouped successfully:", groupedDomains);
-    let domainsWithProducts = retrieveProducts.getProductUrls(groupByDomain);
-    console.log(domainsWithProducts);
+    console.log("Domains grouped successfully:", groupedDomains);
+    retrieveProducts.getProductUrls(groupByDomain);
   })
   .catch(error => {
     console.error("Error grouping domains:", error);

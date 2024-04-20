@@ -12,9 +12,9 @@ module.exports = function groupByDomain(urls) {
           domains[domain] = domains[domain] || [];
           domains[domain].push(currentUrl);
         }
-        retrieveProducts.getProductUrls(domains);
         return domains;
       }, {});
+      retrieveProducts.getProductUrls(domains);
       resolve(domains);
     } catch (error) {
       reject(error);
