@@ -1,5 +1,7 @@
 const url = require('url');
 
+const retrieveProducts = require('../helpers/retrieveProducts');
+
 module.exports = function groupByDomain(urls) {
   return new Promise((resolve, reject) => {
     try {
@@ -10,6 +12,7 @@ module.exports = function groupByDomain(urls) {
           domains[domain] = domains[domain] || [];
           domains[domain].push(currentUrl);
         }
+        retrieveProducts.getProductUrls(domains);
         return domains;
       }, {});
       resolve(domains);
