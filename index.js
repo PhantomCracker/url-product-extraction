@@ -22,7 +22,17 @@ for (let i = 0; i < parsedData.data.length; i++) {
 groupByDomain(urls)
   .then(groupedDomains => {
     // console.log("Domains grouped successfully:", groupedDomains);
-    let products = retrieveProducts.getProductUrls(groupedDomains);
+    // for (let domain in groupedDomains) {
+    //     if (groupedDomains[domain]) {
+    //         let prompt = "Can you tell me which of the following urls contain product names? \n" + groupedDomains[domain];
+    //         openAiHelper.callForHelp(prompt);
+    //     }
+    // }
+    // for (let i = 0; i < Object.keys(groupedDomains).length; i++) {
+        // console.log(groupedDomains[]);
+    // }
+    // let products = retrieveProducts.getProductUrls(groupedDomains);
+    // openAiHelper.callForHelp(prompt);
     // console.log(products);
   })
   .catch(error => {
@@ -35,4 +45,4 @@ console.log("Running time: ", timeAfter - timeBefore);
 
 // console.log(parsedData.data);
 
-openAiHelper.callForHelp("hellooo");
+// openAiHelper.callForHelp("hellooo");
