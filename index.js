@@ -3,7 +3,7 @@ const Papa = require('papaparse');
 
 const groupByDomain = require('./helpers/groupByDomain');
 const retrieveProducts = require('./helpers/retrieveProducts');
-const { time } = require('console');
+const openAiHelper = require('./helpers/openAIHelper');
 
 const csvFile = fs.readFileSync('./data/urls.csv', 'utf8');
 
@@ -23,7 +23,7 @@ groupByDomain(urls)
   .then(groupedDomains => {
     // console.log("Domains grouped successfully:", groupedDomains);
     let products = retrieveProducts.getProductUrls(groupedDomains);
-    console.log(products);
+    // console.log(products);
   })
   .catch(error => {
     console.error("Error grouping domains:", error);
@@ -34,3 +34,5 @@ let timeAfter = Date.now();
 console.log("Running time: ", timeAfter - timeBefore);
 
 // console.log(parsedData.data);
+
+openAiHelper.callForHelp("hellooo");

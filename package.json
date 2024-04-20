@@ -9,6 +9,7 @@
   "author": "fs0ciety team",
   "license": "ISC",
   "dependencies": {
+    "openai": "^4.38.2",
     "papaparse": "^5.4.1"
   }
 }
