@@ -13,13 +13,14 @@ function getProductUrls(data) {
       categoryUrls[domain] = [];
   
       for (const url of data[domain]) {
-        let category;
-        let product;
+        let category = '""';
+        let product = '""';
         if (url.pathname === '/') {
           category = 'None';
           product = 'None';
-        } else if (url.currentUrl.includes("/product/") || url.currentUrl.includes("?product=")) {
+        } else if (url.currentUrl.includes("/product/") || url.currentUrl.includes("?product=") | url.currentUrl.includes("product")) {
           productUrls[domain].push(url);
+          product = url.pathname.split('/').pop();
           count++;
 
           if (url.currentUrl.includes("/category/") || url.currentUrl.includes("?category=") || url.currentUrl.includes("category")) {
