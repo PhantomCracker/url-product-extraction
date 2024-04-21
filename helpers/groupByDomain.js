@@ -9,8 +9,13 @@ module.exports = function groupByDomain(urls) {
         if (typeof currentUrl === 'string') { // Check if it's a string because this ******* wants a string :)
           const parsedUrl = url.parse(currentUrl);
           const domain = parsedUrl.hostname;
+          const pathname = parsedUrl.pathname;
+          let data = {
+            currentUrl: currentUrl,
+            pathname: pathname
+          }
           domains[domain] = domains[domain] || [];
-          domains[domain].push(currentUrl);
+          domains[domain].push(data);
         }
         return domains;
       }, {});
