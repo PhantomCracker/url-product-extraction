@@ -28,7 +28,8 @@ groupByDomain(urls)
       // openAiHelper.callForHelp(prompt);
     }
     // tensorFlowHelper.predictProductName(urls);
-    console.log(groupedDomains);
+    // console.log(groupedDomains);
+    console.log(products);
   })
   .catch(error => {
     console.error("Error grouping domains:", error);
