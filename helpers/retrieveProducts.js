@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 function getProductUrls(data) {
-    const fileWriteStream = fs.createWriteStream('products.csv');
+    const fileWriteStream = fs.createWriteStream('./data/products.csv');
     fileWriteStream.write('URL,category,product\n', 'utf8');
     const productUrls = {};
     const categoryUrls = {};
@@ -20,7 +20,11 @@ function getProductUrls(data) {
           product = 'None';
         } else if (url.currentUrl.includes("/product/") || url.currentUrl.includes("?product=") | url.currentUrl.includes("product")) {
           productUrls[domain].push(url);
-          product = url.pathname.split('/').pop();
+          let productName = url.pathname.split('/').pop();
+          if (productName === '') {
+            productName = url.pathname.split('/')[url.length - 2];
+          }
+          product = productName;
           count++;
 
           if (url.currentUrl.includes("/category/") || url.currentUrl.includes("?category=") || url.currentUrl.includes("category")) {

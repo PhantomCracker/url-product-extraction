@@ -9,6 +9,7 @@
   "author": "fs0ciety team",
   "license": "ISC",
   "dependencies": {
+    "@tensorflow/tfjs": "^4.18.0",
     "openai": "^4.38.2",
     "papaparse": "^5.4.1"
   }
