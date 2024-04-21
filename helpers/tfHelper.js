@@ -148,3 +148,7 @@ function tokenizeURL(url) {
         return filteredTokens;
     }
 }
+
+module.exports = {
+    predictProductName: predictProductName
+}

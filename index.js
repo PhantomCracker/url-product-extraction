@@ -4,7 +4,7 @@ const Papa = require('papaparse');
 const groupByDomain = require('./helpers/groupByDomain');
 const retrieveProducts = require('./helpers/retrieveProducts');
 const openAiHelper = require('./helpers/openAIHelper');
-const tensorFlowHelper = required('./helpers/tfHelper.js')
+// const tensorFlowHelper = require('./helpers/tfHelper.js')
 
 const csvFile = fs.readFileSync('./data/urls.csv', 'utf8');
 
@@ -23,9 +23,12 @@ for (let i = 0; i < parsedData.data.length; i++) {
 groupByDomain(urls)
   .then(groupedDomains => {
     let products = retrieveProducts.getProductUrls(groupedDomains);
-    // openAiHelper.callForHelp(prompt);
-    // 
-    console.log(products);
+    for (let i = 0; i < parsedData.data.length; i++) {
+      let prompt = "does the following url have a product name in it? " + parsedData.data[i].url;
+      // openAiHelper.callForHelp(prompt);
+    }
+    // tensorFlowHelper.predictProductName(urls);
+    console.log(groupedDomains);
   })
   .catch(error => {
     console.error("Error grouping domains:", error);
