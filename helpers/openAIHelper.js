@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-  apiKey: 'sk-proj-nX2fHDDymgKFx1zHxGHMT3BlbkFJIk2WapDfylV05Ut0pqwo', // This is the default and can be omitted
+  apiKey: '', // This is the default and can be omitted
 });
 
 async function callForHelp(prompt) {

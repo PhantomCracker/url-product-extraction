@@ -25,11 +25,12 @@ groupByDomain(urls)
     let products = retrieveProducts.getProductUrls(groupedDomains);
     for (let i = 0; i < parsedData.data.length; i++) {
       let prompt = "does the following url have a product name in it? " + parsedData.data[i].url;
-      // openAiHelper.callForHelp(prompt);
     }
+      openAiHelper.callForHelp("are you still working?");
+
     // tensorFlowHelper.predictProductName(urls);
     // console.log(groupedDomains);
-    console.log(products);
+    // console.log(products);
   })
   .catch(error => {
     console.error("Error grouping domains:", error);
